@@ -1,0 +1,78 @@
+<%layout('boilerplate')%>
+<link rel="stylesheet" href="/css/newitem.css">
+
+<div class="cointainer-fluid">
+    <section>
+        <div class="row">
+            <div class="col-lg-10">
+      <p id="gray" style="font-size:medium !important">  Hello, <span style="color:white;font-size:x-large;"><%=user.username.toUpperCase()%></span> </p>
+   
+  </div>
+              <div class="col lg 2">
+                
+              </div>
+      </div>
+  </section>
+
+    <div class="row">
+        <div class="col-lg-10">
+            <section class="main">
+                <div class="layer">
+
+        <p class="mx-5 add" style="font-size: 23px;">ADD ITEM</p>
+        <form action="/additem" class="mx-5" method="POST">
+            <label for="itemname"class="form-label mx-4 mt-2">Name</label><br>
+            <input type="text" id="itemname" class="form-control" name="itemname" placeholder="Enter Item Name"><br>
+            <label for="manufacturerName"class="form-label mx-4 ">Manufacturer</label><br>
+            <input type="text" id="manufacturerName"class="form-control" name="manufacturerName" placeholder="Enter Manufacturer Name"><br>
+            <label for="category" class="form-label mx-4 ">Category</label>
+            <label for="rating" class="form-label " style="margin-left:12% !important;">Rating</label>
+            <label for="price" class="form-label " style="margin-left:12% !important;margin-right:45% !important;;">Price</label>
+            <select name="category" class="form-control1" id="category" style="margin-left: 5px !important;">
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+            </select>
+            
+            <select name="rating" class="form-control1" style="margin-left: 6% !important;"id="rating" >
+                <option value="5.0">5.0</option>
+                <option value="4.0">4.0</option>
+                <option value="3.0">3.0</option>
+                <option value="2.0">2.0</option>
+                <option value="1.0">1.0</option>
+            </select>
+            
+            <input type="text" class="form-control1" id="price" name="price" placeholder="10"style="margin-left: 4% !important;">
+            <br>
+            <label for="url" class="form-label mx-4 mt-2">Image URL</label><br>
+            <input type="text" id="url" class="form-control" name="url" placeholder="Enter Image URL"><br>
+            <label for="about" style="padding-left: 2% !important;">About</label><br>
+            <textarea id="about" class="form-control" name="about" rows="4" cols="50" placeholder="About Item"></textarea><br>
+            <p class='error  ms-5'><%=error%></p>
+            <button type="submit"class="btn1 mt-2 mx-4">ADD</button>
+            <a href="/home" class="btn btn2  mx-4">CANCEL</a>
+        </form>
+    </div>
+     </section>
+    </div>
+    
+    </div>    
+</div>
+<section class="right" >
+    <form action="/logout" class='logout' method="GET">
+        <button type="submit" class='btn-dark btn-lg logbtn'>LOGOUT</button>
+    </form>
+    <span class="blob"></span>
+    <p class="username"><%=user.username.toUpperCase()%></p>
+    <p class='homebtn'>HOME</p>
+            <div>
+             <form action="/additem"  method="GET"><button class="mybag">ADD ITEM</button></form> 
+            </div>
+    <a href="/home"> <img src="/css/img/mybagshop-white.png"class='logo'>  </a>
+</section>  
+
+
+
+
+
+
+        

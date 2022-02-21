@@ -1,0 +1,112 @@
+<%layout('boilerplate')%>
+<link rel="stylesheet" href="/css/details.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+
+
+<% if (user.username==='admin'){ %> 
+    <section class='body'>
+        <h5 style="display:inline-block;color:white;margin-top:10px !important; margin-bottom:10px;margin-left:30px">Hello,&#160;</h5><h4 style="display:inline-block;margin-bottom:15px;margin-top:10px!important;color:white" ><%=user.username.toUpperCase()%> </h4>
+        <% } %> 
+        <% if (!(user.username==='admin')){ %> 
+            <section class='bodyuser'>
+                <h5 style="display:inline-block;color:#383838;margin-top:10px !important;margin-bottom:10px; margin-left:30px">Hello,&#160;</h5><h4 style="display:inline-block;margin-bottom:15px;margin-top:10px!important;color:#383838" ><%=user.username.toUpperCase()%> </h4>
+                <% } %> 
+        
+    <div class="layer"> 
+        <a href="/home" class='arrbut btn'><img class='arrow'src='/css/img/left-arrow.png'></a> 
+        <h4 class='itemdetails'>ITEM DETAILS</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <img class="img" src="<%=item.url%>" alt="">
+                </div>
+                <div class="col-7">
+                    <h1 class="iname"><%=item.itemname%> </h1>
+                    <h2 class='iman'>By <%=item.manufacturerName%> </h2>
+
+
+                    <div class='irating'>
+                    <%for(i=0;i<item.rating;i++){%>
+                        <span class="dot1"></span>
+                     <% } %> 
+                     <% for(i=item.rating;i<5;i++){ %>
+                     <span class="dot"></span>
+                     <% } %>     
+                    </div>
+                    <h2 class='iprice'>$<%=item.price%> </h2>
+                    <% if (!(user.username==='admin')){ %> 
+                        <% if(user2.userarr.includes(item._id)){%>
+                           <div><button class='added' disabled><img class="shop"src="/css/img/tick.png" >ADDED</button></div> 
+                            <% }else{ %> 
+                        <form action="/buy" class='form' method="POST" >
+                            <button name="itemid" value="<%=i._id%>" class='btns'><img class="shop"src="/css/img/shopping-bag.png">BUY</button>
+                        </form> 
+                        <%} }%> 
+                </div>    
+                <div class="col-2">
+                    <% if (user.username==='admin'){ %>  
+                        <div class="pencilcircle"><form action="/updateitem/<%=item._id%>" method="GET"><button class='penbut'><img class='pencilbut'src="/css/img/pencil.png"></button></form> </div>
+                        <% } %> 
+                        <% if (user.username==='admin'){ %>  
+                            <div class="deletecircle"><button class='deletebut'data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><img class='deleteicon'src="/css/img/delete.png"></button></form> </div>
+
+
+                           
+
+
+
+
+                            <% } %>     
+                </div>
+            </div>
+           
+        </div>
+        <div class="abtitem">
+            <p style="font-size:20px;font-weight:400">ABOUT ITEM</p>
+            <p><%=item.about%> </p>
+            </div>          
+    </div>
+<section class="right">
+    <form action="/logout" class='logout' method="GET">
+        <button type="submit" class='btn-dark btn-lg logbtn'>LOGOUT</button>
+    </form>
+    <span class="blob"></span>
+    <p class="username"><%=user.username.toUpperCase() %></p>
+    <p class='homebtn'>HOME</p>
+    <% if (!(user.username==='admin')){ %>
+        <div>              
+        <form action="/myBag" method="GET">
+            <button type="submit"class='mybag '>MY BAG<span class="position-absolute top-0 start-100 translate-middle badge rounded-circle"><%=count1%></button>
+        </form> 
+        </div> 
+        <% } %> 
+        <% if (user.username==='admin'){ %>  
+            <div>
+             <form action="/additem"  method="GET"><button class="mybag">ADD ITEM</button></form> 
+            </div>
+            <% }%>
+    <a href="/home"> <img src="/css/img/mybagshop-white.png"class='logo'>  </a>
+</section>  
+            </section>
+                     
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content popup"> 
+                      <p class="confirm">CONFIRM REMOVE</p>     
+                    <p class="popmsg">Deleting this item will remove all its traces from the system and cannot be rolled back. Do you really wish to delete this item?</p>
+                    <div class='row'>
+                    <div class='col-1 '><form style="display:inline-block" method="POST" action="/deleteitem/<%=item._id%>?_method=DELETE" >
+                        <button type="submit" class="submitremove">REMOVE</button></form></div>
+                        <div class='col-2'>  <button type="button" class="cancel" data-bs-dismiss="modal">CANCEL</button></div>
+                    </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>        

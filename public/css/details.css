@@ -1,0 +1,334 @@
+.body
+{
+background-image:url('https://raw.githubusercontent.com/john-fermadez/project/main/assets/background-images/admin.jpg');
+ background-position:center;
+ background-size:cover;
+ height: 100vh;
+}
+.bodyuser
+{
+background-image:url('https://user-images.githubusercontent.com/81792506/127760836-f88fccdf-9234-44d4-94db-759776bf6c13.jpg');
+ background-position:inherit;
+ background-size:cover;
+ height: 100vh;
+}
+.mybag{
+    position: relative;  
+    margin-left:50px;
+    background-color:inherit;
+    color:white;
+    border:none;
+    font-size:20px;
+    
+}
+.right{
+    height:105%;
+    width:17%;
+    opacity:1;
+    backdrop-filter: blur(15px);
+   -webkit-backdrop-filter: blur(15px);
+   background-color: rgba(0, 0, 0, 0.8);
+   position:absolute;
+   position:fixed;
+  left:80%;
+  z-index: 10;
+    
+}
+.logo{
+    height:120px;
+    width:170px;
+    margin-top: 55%!important;
+    margin-left: 15%;
+}
+.homebtn{
+    letter-spacing: 0.2px;
+    color: #237DB6;
+    margin-left:18%;
+    margin-top:30%;
+    font-size:22px;
+    font-weight: 600;
+}
+.right {
+    height:100%;
+    width:20%;
+    bottom:1px;
+}
+.blob{
+    height: 100px;
+  width: 100px;
+  margin-left:50px;
+  background-color:white;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 100;
+}
+.logout{
+    position: relative;
+    margin-top:8%;
+    margin-left:180px;
+}
+.logbtn{
+    border:none !important;
+    background-color: transparent !important;
+    font-weight: 600;
+}
+.username{
+    color:white;
+    font-size: 25px;
+    margin-top:20px;
+    margin-left:50px;
+    z-index: 100;
+}
+.layer{
+    top: 80px;
+    margin-top: 0px;
+left: 0px;
+width: 1180px;
+height: 92.5vh;
+border-radius: 0px 20px 0px 0px;
+background-color:rgba(0, 0, 0, 0.6);
+}
+.arrow{
+    height:20px;
+    width:20px;
+    display:inline;
+    margin-left:-1px;
+    margin-top:-1px;
+
+}
+
+.itemdetails{
+    color:white;
+    display: inline-block;
+    margin-bottom:30px;
+    margin-top:30px;
+    margin-left: 1%;
+   
+    text-align: end ;
+}
+.arrbut{
+    height:40px;
+    width:40px;
+    margin-left: 5%;
+    margin-top:-0.5%;
+    background-color:rgba(0, 0, 0, 0.7)!important;
+    border-radius: 50% !important;
+}
+.box{
+    height:490px;
+    width:1000px;
+    
+    margin-left:5%;
+    margin-top:25px;
+}
+.img{
+    height:300px;
+    width:220px;
+    display: inline-block;
+    border-radius:0 20px 0 0;
+    
+}
+.iname{
+    display: inline-block;
+    margin-bottom: 15px;
+    width:600px;
+    font-size:30px;
+    font-weight: 600;
+    color:white;
+   
+    letter-spacing: 0.4px;
+}
+.iman{
+    display: inline-block;
+    width:600px;
+    margin-bottom: 15px;
+    font-size:20px;
+    font-weight: 400;
+    color:white;
+    letter-spacing: 0.3px;
+}
+.irating{
+    display: inline-block;
+    width:600px;
+    margin-bottom: 15px;
+    font-size:25px;
+    color:#EF7D21;
+    font-weight: 400;
+    margin-top:10px;
+   
+}
+.iprice{
+    display: inline-block;
+    font-size:25px;
+    background-color: black;
+    color:#BED331;
+    height:40px;
+    width:80px;
+    padding-left:20px;
+    padding-top:5px;
+    letter-spacing: 0.3px;
+    border-radius: 0px 10px 0px 0px;
+    font-weight: 600;
+}
+
+.deleteicon{
+    height:20px;
+    width:20px;
+    display:inline;
+    border-color: none;
+}
+.pencilbut{
+    height:20px;
+    width:20px;
+border-color: none;
+
+}
+.penbut{
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+    background-color:rgba(0, 0, 0, 0.7);
+    border:none;
+    display: block;
+    margin-bottom: 15px;
+}
+.deletebut{
+    height:40px;
+    width:40px;
+ background-color:rgba(0, 0, 0, 0.7);
+border-radius: 50%;
+border: none;
+display: block;
+}
+.deletecircle{
+    display: block;
+    border-color: none;
+   
+   
+}
+.pencilcircle{
+    display: block;
+    
+}
+.buybtn{
+    margin-top: 90px !important;
+    color:black;
+    background-color: #237DB6;
+    border-radius:30px;
+    border-color:transparent;
+    padding:7px 30px;
+    color:white;
+
+}
+.row{
+    height: 330px;
+    width:1000px;
+    margin-left: 4% !important;
+    margin-top:40px;
+ 
+}
+.abtitem{
+    margin-left: 5%;
+    color:white;
+    width:740px;
+}
+.badge{
+    background-color: #EF7D21;
+    /* border-radius: 50%!important; */
+    height: 18px!important;
+    width: 18px!important;
+    font-size:0.55em !important;
+
+}
+.btns
+{
+    background-color:#237DB6;
+    border-radius:30px;
+    border-color:transparent;
+    color:white;
+    padding:4px 25px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    height:35px;
+    width:120px;
+    font-weight: 600;
+
+}
+.shop{
+    height:15px;
+    width:15px;
+    margin-bottom:5px;
+    border-color: none;
+    display: inline;
+    margin-right:6px;
+}
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color:white;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot1{
+    height: 25px;
+    width: 25px;
+    background-color: #EF7D21;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right:3px;
+  }
+  .added
+{
+    background-color:#383838;
+    border-radius:30px;
+    border-color:transparent;
+    color:white;
+    padding:4px 10px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    height:35px;
+    width:120px;
+
+}
+.popup{
+    width:470px !important;
+    height: 200px !important;
+    border-radius:0 10px 0 0 !important;
+}
+.submitremove{
+    width:110px !important;
+    margin-top: 15px !important;
+    display:inline-block !important;
+    background: #237DB6 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    color:white;
+    border:none;
+    padding:3px 10px !important;
+}
+.cancel{
+    width:110px !important;
+    display:inline-block !important;
+    margin-top: 15px !important;
+    background-color: black;
+    border-radius: 30px;
+    color:white;
+    border:none;
+    margin-left:35px !important;
+    padding:3px 10px !important;
+
+}
+.popmsg{
+    letter-spacing: 0.22px;
+color: #383838;
+margin-left:25px;
+font-size: 15px;
+font-weight: 500!important;
+}
+.confirm{
+    margin-top:20px;
+    margin-left:25px;
+    font-size: 18px;
+    color: #383838;
+font-weight: 700!important;
+margin-bottom: 8px !important;
+}

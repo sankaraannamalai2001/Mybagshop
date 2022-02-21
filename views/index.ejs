@@ -1,0 +1,172 @@
+<%layout('boilerplate')%>
+<link rel="stylesheet" href="/css/home.css">
+<% if (user.username==='admin' && count!==0){ %> 
+<section class='body'>
+    <h5 style="display:inline-block;color:white;margin-top:10px !important; margin-bottom:10px;margin-left:30px">Hello,&#160;</h5><h4 style="display:inline-block;margin-bottom:15px;margin-top:10px!important;color:white" ><%=user.username.toUpperCase()%> </h4>
+    <% } %> 
+    <% if (!(user.username==='admin')&& count!=0){ %> 
+        <section class='bodyuser'>
+            <h5 style="display:inline-block;color:#383838;margin-top:10px !important;margin-bottom:10px; margin-left:30px">Hello,&#160;</h5><h4 style="display:inline-block;margin-bottom:15px;margin-top:10px!important;color:#383838" ><%=user.username.toUpperCase()%> </h4>
+            <% } %> 
+            <% if(!(user.username==='admin')&&count===0){ %>
+                <section class='bodyemptyuser'>
+                    <h5 style="display:inline-block;color:#383838;margin-top:10px !important;margin-bottom:10px; margin-left:30px">Hello,&#160;</h5><h4 style="display:inline-block;margin-bottom:15px;margin-top:10px!important;color:#383838" ><%=user.username.toUpperCase()%> </h4>
+                <% } %> 
+                <% if(user.username==='admin'&&count===0){ %>
+                    <section class='bodyemptyuser'>
+                        <h5 style="display:inline-block;color:#383838;margin-top:10px !important;margin-bottom:10px; margin-left:30px">Hello,&#160;</h5><h4 style="display:inline-block;margin-bottom:15px;margin-top:10px!important;color:#383838" ><%=user.username.toUpperCase()%> </h4>
+                    <% } %>     
+           
+<% if(count!==0){ %>
+<div class="layer">
+ <% }else{ %>
+    <div class="layer2">
+<% } %>     
+    <% if(count===0){ %>
+        <img class="empty" src="/css/img/empty.png">
+        <% if(!(user.username==='admin')){ %>
+        <p class='emptymsg3'>NO PRODUCTS ARE AVAILABLE</p>
+        <p class="emptymsg4">AT THIS MOMENT</p> 
+        <% }else {%> 
+            <p class="emptymsg">YOUR STORE IS EMPTY</p>
+            <p class='emptymsg2'>Add items to it now</p> 
+            <form action="/additem"  method="GET"><button class="addi">Add item</button></form> 
+            <% } %>  
+
+        <% }else{ %> 
+
+
+
+    <div class='containerOuter'>
+        
+        <h4 class='menHeading' style="color:white;height:0;width:0;display:block;margin-top:15px;margin-left: 30px;">MEN</h4>
+        <br><br>
+
+        <% for(i of item){%> 
+        <% if(i.category==='Men') {%> 
+
+       <div class="menContainer container">    
+
+            <div class='row'>
+                <form action="/details/<%=i._id%>" class='form' method="GET">
+                    <div class='box '>
+                        <div class='imgcon'>
+                        <div class="img" style="background-image:url('<%=i.url%>');"> </div>
+                        <div class="imgprice"><button type="button"class="btn-dark pricebut" disabled>$<%=i.price%> </button></div>
+                         </div>
+                        <button class="button" type='submit' style="height:300px;width:inherit; padding-bottom: 335px; position:absolute;border:none; background-color: transparent;"></button>
+                        <%if(i.itemname.length>21){%>                          
+                            <p class='itemname'><%=i.itemname.substring(0,21)+"...";%></p> 
+                            <% }else{%> 
+                            <p class='itemname'><%=i.itemname%></p>
+                            <% } %>
+                            <%if(i.manufacturerName.length>12){%>       
+                                <p class='manname'>By <%=i.manufacturerName.substring(0,12)+"...";%> 
+                                </p>
+                                <% }else{%> 
+                                    <p class='manname'><%=i.manufacturerName%></p>
+                                    <% } %>
+                        <p class='rating'> Rating <%=i.rating%>.0</p>
+                        
+                    </div>
+                </form> 
+                <% if (!(user.username==='admin')){ %>
+                    <% if(user2.userarr.includes(i._id)){%>
+                        <div><button class='added' disabled><img class="shop"src="/css/img/tick.png" >ADDED</button></div> 
+                         <% }else{ %>   
+                <form action="/buy" class='form' method="POST" >
+                    <button name="itemid" value="<%=i._id%>" class='btns'><img class="shop"src="/css/img/shopping-bag.png">BUY</button>
+                </form>    
+            
+        
+                    <% } }%> 
+            </div>       
+        </div>
+             <% } %>  
+             <% } %>
+ 
+       
+
+
+            <div class="break" style="display:block;width:100%;";></div>
+             <h4 class='menHeading' style="color:white;height:0;width:0;display:block;margin:2px;margin-left: 30px;">WOMEN</h4>
+             <% for(i of item){%> 
+                <% if(i.category==='Women') {%> 
+            <div class="womenContainer container">    
+        
+                <div class='row'>
+                    <form action="/details/<%=i._id%>" class='form' method="GET">
+                        <div class='box'>
+                            <div class='imgcon'>
+                            <div class="img" style="background-image:url('<%=i.url%>');"> </div>
+                            <div class="imgprice"><button type="button"class="btn-dark pricebut" disabled>$<%=i.price%> </button></div>
+                            </div>
+                            <button class="button" type='submit' style="height:300px;width:inherit; padding-bottom: 335px; position:absolute;border:none; background-color: transparent;"></button>                  
+                            <%if(i.itemname.length>21){%>                          
+                            <p class='itemname'><%=i.itemname.substring(0,21)+"...";%></p> 
+                            <% }else{%> 
+                            <p class='itemname'><%=i.itemname%></p>
+                            <% } %>
+                            <%if(i.manufacturerName.length>12){%>       
+                            <p class='manname'>By <%=i.manufacturerName.substring(0,12)+"...";%> 
+                            </p>
+                            <% }else{%> 
+                                <p class='manname'><%=i.manufacturerName%></p>
+                                <% } %>
+                            <p class='rating'> Rating <%=i.rating%>.0</p>
+                            
+                        </div>
+                    </form> 
+                    <% if (!(user.username==='admin')){ %>
+                        <% if(user2.userarr.includes(i._id)){%>
+                            <div><button class='added' disabled><img class="shop"src="/css/img/tick.png" >ADDED</button></div> 
+                             <% }else{ %>   
+                        <form action="/buy" class='form' method="POST" >
+                            <button name="itemid" value="<%=i._id%>" class='btns'><img class="shop"src="/css/img/shopping-bag.png">BUY</button>
+                        </form>   
+                    <% } }%>
+                </div>       
+            </div>
+                     <% } %>  
+                     <% } %>
+
+
+
+
+                    
+               
+                
+                
+    </div>
+    
+<% } %> 
+</div>   
+<section class="right">
+    <form action="/logout" class='logout' method="GET">
+        <button type="submit" class='btn-dark btn-lg logbtn'>LOGOUT</button>
+    </form>
+    <span class="blob"></span>
+    <p class="username"><%=user.username.toUpperCase() %></p>
+    <p class='homebtn'>HOME</p>
+    <% if (!(user.username==='admin')){ %>
+        <div>              
+        <form action="/myBag" method="GET">
+            <button type="submit"class='mybag '>MY BAG<span class="position-absolute top-0 start-100 translate-middle badge rounded-circle"><%=count1%></span></button>
+        </form> 
+        </div> 
+        <% } %> 
+        <% if (user.username==='admin'){ %>  
+            <div>
+             <form action="/additem"  method="GET"><button class="mybag">ADD ITEM</button></form> 
+            </div>
+            <% }%>
+    <img src="/css/img/mybagshop-white.png"class='logo'>
+</section>        
+        
+
+</section>
+
+<script src="/js/buy.js"></script>    
+
+
+

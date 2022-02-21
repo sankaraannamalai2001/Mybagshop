@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+*{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+body{
+    font-family: 'Open Sans', sans-serif !important;
+}
+form{
+    z-index: 100 !important;
+}
+label{
+    color:white;
+}
+.error{
+    color:#D64D4D;
+    text-align: left;
+    margin-left: 4px !important;
+font: normal normal bold 18px/24px Open Sans;
+letter-spacing: 0.18px;
+height: 24px;
+font-size: 16px;
+}
+#about{
+    padding-left:20px !important;
+    padding-top:5px !important;
+    border-radius: 10px 10px 0px 0px !important;
+}
+#manufacturerName{
+    width: 33% !important;
+}
+#gray{
+    background-color: rgb(87, 87, 87);
+    padding-bottom:1% !important;
+    padding-left: 1.5% !important;
+    opacity: 70% !important;
+    width: 96%  !important;
+    color: white;
+    padding-top: 1% !important;
+    font-size: 20px !important;
+    
+}
+.layer{
+    top: 80px;
+    margin-top: 0px;
+left: 0px;
+width: 1180px;
+height: 91.5vh;
+border-radius: 0px 20px 0px 0px;
+background-color:rgba(0, 0, 0, 0.6);
+
+}
+.img2{
+    width: 50% !important;
+    padding-top: 100% !important;
+    }
+    
+.black{
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 15px 15px 15px 0 !important;
+    direction: rtl !important;
+}
+.add{
+    margin-bottom: 1% !important;
+    color:white;
+}
+.form-control{
+    width: 50% !important;
+   
+}
+input{
+    
+    border-radius:10px 10px 0px 0px !important;
+    border-color: none !important;
+    padding: 8px !important;
+    padding-left: 23px !important;
+}
+.form-control1{
+    width: 13% !important;
+    padding: 8px !important;
+    border-radius:10px 10px 0px 0px !important;
+    padding-left: 23px !important;
+    border: none !important;
+    margin-left:14px !important;
+}
+#control1{
+    width: 10% !important;
+    padding: 8px !important;
+    border-radius:10px 10px 0px 0px !important;
+    padding-left: 23px !important;
+    border-color:none;
+}
+.form-control2{
+    width: 45% !important;
+    border-color: none;
+}
+#url{
+    width: 50% !important;
+}
+#itemname{
+    width: 33% !important;
+    border-radius:10px 10px 0px 0px !important;
+    padding-left: 23px !important;
+}
+
+.main{
+    width: 96%;
+    background: transparent url('./img/admin.jpg') 0% 0% no-repeat padding-box;
+    background-size: cover !important;
+    height: 91.5vh !important;
+    padding-bottom: 0%  !important;  
+}
+.gray1{
+    background-color: #00000029;
+}
+.blob{
+border-radius: 50px;
+width: 50% !important;
+}
+.btn1{
+width: 15%;
+padding: 10px !important;
+border-radius: 30px;
+background-color: #237DB6;
+color: white;
+border:none !important;
+margin-left:4px !important;
+}
+.btn2{
+width: 15%;
+padding: 10px !important;
+border-radius: 30px;
+background-color: black;
+color: white;
+border:none !important;
+}
+.form-label{
+    margin-left: 20px;
+}
+.right{
+    height:105% !important;
+    width:17% !important;
+    opacity:1 !important;
+    /* box-shadow:-40px -70px 120px 60px black inset; */  
+    /* backdrop-filter: blur(15px)!important;
+  -webkit-backdrop-filter: blur(15px)!important; */
+  background-color: rgba(0, 0, 0, 0.8)!important;
+   position:absolute!important;
+   position:fixed!important;
+  left:80%!important;
+  z-index: 10!important;
+    
+}
+.logo{
+    height:120px!important;
+    width:170px!important;
+    margin-top: 55%!important;
+    margin-left: 15%!important;
+}
+.homebtn{
+    letter-spacing: 0.2px!important;
+    color: #237DB6!important;
+    margin-left:18%!important;
+    margin-top:30%!important;
+    font-size:22px!important;
+    font-weight: 600!important;
+}
+.right {
+    height:100%!important;
+    width:20%!important;
+    bottom:1px!important;
+}
+.blob{
+    height: 100px!important;
+  width: 100px!important;
+  margin-left:50px!important;
+  background-color:white!important;
+  border-radius: 50%!important;
+  display: inline-block!important;
+  z-index: 100!important;
+}
+.logout{
+    position: relative!important;
+    margin-top:8%!important;
+    margin-left:180px!important;
+}
+.logbtn{
+    border:none !important;
+    background-color: transparent !important;
+    font-weight: 600;
+}
+.mybag{
+    position: relative !important;
+    margin-top:5% !important;
+    margin-left:50px!important;
+    background-color:inherit !important;
+    color:white!important;
+    border:none!important;
+    font-size:18px!important;
+}
+.username{
+    color:white!important;
+    font-size: 25px !important;
+    margin-top:20px !important;
+    margin-left:50px!important;
+   
+}
